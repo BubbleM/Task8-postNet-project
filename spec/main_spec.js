@@ -20,6 +20,13 @@ describe("测试描述", function(){
         expect(expect_string).to.equal(result);
     });
 
+    it("should convert 9-digit postcode to barcode", function(){
+        var postcode = '123456789';
+        var barcode = main(postcode);
+
+        expect(barcode).to.equal('|　:::||　::|:|　::||:　:|::|　:|:|:　:||::　|:::|　|::|:　|:|::　:|:|:　|');
+    });
+
     it("return barCode while input zipCode length is 9", function(){
 
         var result = main('450561234');
